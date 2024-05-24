@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Disable Specific Dates</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+
+</head>
+<body>
+
+<form>
+    <label for="tanggal_mulai">Choose a start date:</label>
+    <input type="text" id="tanggal_mulai" name="tanggal_mulai">
+    <br><br>
+    <input type="submit" value="Submit">
+</form>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+	flatpickr("#tanggal_mulai", {
+        minDate: '2024-06-10', // Set the minimum date
+        disable: [
+            '2024-06-25', // Disable Christmas
+            '2024-06-27', // Disable New Year
+            '2024-06-28'  // Disable Independence Day
+        ]
+    });
+});
+</script>
+
+</body>
+</html>
